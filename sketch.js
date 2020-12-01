@@ -1,6 +1,7 @@
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
+const Render=Matter.Render;
 
 var engine,world;
 var ground,ball;
@@ -40,6 +41,16 @@ function setup() {
   ball = Bodies.circle(200,100,20);
   World.add(world,ball);
  // console.log(ball);
+  
+  var render = Render.create({
+  element: document.body,
+  engine: engine,
+  options: {
+    width: 600,
+    height: 600,
+    wireframes: false
+  }
+});
  
   
   //console.log(ground);
